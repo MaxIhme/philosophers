@@ -6,7 +6,7 @@
 /*   By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:12:41 by mrehberg          #+#    #+#             */
-/*   Updated: 2023/01/01 19:02:02 by mrehberg         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:39:30 by mrehberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,23 @@ int	main(int argc, char **argv)
 
 	if (init_info(&info, argc, argv))
 		return (1);
-	if (init_mutex(&info))// funktioniert das?
+	if (init_mutex(&info))
 		return (1);
 	if (init_philo(&info))
 		return (1);
 	if (create_philos(&info))
 		return (1);
-
-	// auf leaks überprüfen
-
-	//init aufräumen und die errors vervollständigen
-
 	join_philos(&info);
 	clean_up(CLEAN_UP_EVERYTHING, &info);
-
 	return (0);
 }
 
 //timingtest anruland
 
 //verschiedenen input testen minus 0 buchstaben etc.
+	// auf leaks überprüfen
 
-
+	//init aufräumen und die errors vervollständigen
 
 // Philo test
 // - Do not test with more than 200 philosophers

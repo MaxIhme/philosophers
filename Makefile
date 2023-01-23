@@ -6,7 +6,7 @@
 #    By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 18:09:20 by mrehberg          #+#    #+#              #
-#    Updated: 2023/01/01 23:09:37 by mrehberg         ###   ########.fr        #
+#    Updated: 2023/01/23 20:12:16 by mrehberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): Makefile $(SRC)
 	$(CC) $(C_TEST_FLAGS) $(SRC) -o $@
 
 e: $(NAME)
-	./$(NAME) 5 610 200 100 5 
+	./$(NAME) 5 800 200 200
 #>> log.txt
 #| pbcopy
 

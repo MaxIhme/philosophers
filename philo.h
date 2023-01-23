@@ -6,7 +6,7 @@
 /*   By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:12:02 by mrehberg          #+#    #+#             */
-/*   Updated: 2023/01/02 10:54:28 by mrehberg         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:41:55 by mrehberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,10 @@
 # define DEBUG_PRINT_MEAL_COUNT 1
 # define DEBUG_PRINT_DOT_ID 0
 
-
 //*********************************************************//
 //**                STRUCTURES                          **//
 
-typedef struct	s_philo
+typedef struct s_philo
 {
 	int				id;
 	pthread_t		thread;
@@ -81,30 +80,38 @@ typedef struct s_info
 	t_philo			*philo;	
 }	t_info;
 
+typedef struct s_init_philo
+{
+	pthread_mutex_t	*m_left_fork;
+	pthread_mutex_t	*m_right_fork;
+	int				*left_fork;
+	int				*right_fork;
+}	t_init_philo;
+
 //*********************************************************//
 //**                FUNCTIONS                           **//
 //*******************************************************//
 
 //**** INIT.C ****//
 
-int	init_info(t_info *info, int argc, char **argv);
-int	init_mutex(t_info *info);
-int	init_philo(t_info *info);
-int	create_philos(t_info *info);
+int		init_info(t_info *info, int argc, char **argv);
+int		init_mutex(t_info *info);
+int		init_philo(t_info *info);
+int		create_philos(t_info *info);
 
 //**** FT_ATOI.C ****//
 
-int			ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 
 //**** ERROR.C ****//
 
-int	error(int err, t_info *info);
-int	error_arg(int argc);
+int		error(int err, t_info *info);
+int		error_arg(int argc);
 
 //**** PHILO_ACTIONS.C ****//
 
 int		sleep_philo(t_philo *philo);
-int 	think_philo(t_philo *philo);
+int		think_philo(t_philo *philo);
 void	eat_philo_sub(t_philo *philo);
 int		eat_philo(t_philo *philo);
 void	*welcome_philo(void *arg);

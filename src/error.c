@@ -6,7 +6,7 @@
 /*   By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 10:17:13 by mrehberg          #+#    #+#             */
-/*   Updated: 2023/01/01 18:58:31 by mrehberg         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:31:00 by mrehberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int	error(int err, t_info *info)
 {
 	printf("ERROR\n");
-	if (err == ERR_MALLOC_FORKS || err == ERR_MALLOC_T_PHILOS ||\
+	if (err == ERR_MALLOC_FORKS || err == ERR_MALLOC_T_PHILOS || \
 		err == ERR_MALLOC_PRINT || err == ERR_MALLOC_MUTEX_FORKS)
 		printf("While memory allocation\n");
 	if (err == ERR_MUTEX_INIT_FORKS || err == ERR_MUTEX_INIT_PRINT)
