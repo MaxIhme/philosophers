@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Debug",
 			"program": "/Users/maxrehberg/Documents/42Wolfsburg/philosophers/philosophers/philo",
-			"args": ["10" "30" "40" "50"],
+			"args": ["1" "800" "200" "200"],
 			"cwd": "${workspaceFolder}"
 		}
 	]

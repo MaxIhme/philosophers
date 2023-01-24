@@ -6,7 +6,7 @@
 /*   By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 07:20:15 by mrehberg          #+#    #+#             */
-/*   Updated: 2023/01/23 20:30:43 by mrehberg         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:57:32 by mrehberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ int	create_philos(t_info *info)
 	{
 		printf("0 1 has taken a fork\n");
 		printf("%d 1 died\n", info->time_die);
+		clean_up(CLEAN_UP_EVERYTHING, info);
 		return (1);
 	}
 	while (++i < info->num_philos)

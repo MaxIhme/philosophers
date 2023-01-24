@@ -6,7 +6,7 @@
 #    By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 18:09:20 by mrehberg          #+#    #+#              #
-#    Updated: 2023/01/23 20:12:16 by mrehberg         ###   ########.fr        #
+#    Updated: 2023/01/24 11:47:13 by mrehberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,23 +26,35 @@ OBJS := $(SRC:.c=.o)
 
 CC := gcc
 
-C_FLAGS := -Wall -Wextra -Werror -pthread
+C_FLAGS := -Wall -Wextra -Werror -pthread -g
 
 C_TEST_FLAGS := -Wall -Wextra -g -pthread #-fsanitize=thread #-fsanitize=address
 
 all: $(NAME)
 
 $(NAME): Makefile $(SRC)
-	$(CC) $(C_TEST_FLAGS) $(SRC) -o $@
+	$(CC) $(C_FLAGS) $(SRC) -o $@
+
+phil := 2
+die := 401
+eat := 200
+sleep := 100
+must_eat := 10
 
 e: $(NAME)
-	./$(NAME) 5 800 200 200
+	./$(NAME) $(phil) $(die) $(eat) $(sleep) $(must_eat)
+
+l: $(NAME)
+	leaks --atExit -- ./$(NAME) $(phil) $(die) $(eat) $(sleep) $(must_eat)
+
+v: $(NAME)
+	./$(NAME) $(phil) $(die) $(eat) $(sleep) $(must_eat) | pbcopy
 #>> log.txt
 #| pbcopy
 
 t: $(NAME)
 #	./$(NAME) 4 310 200 100 20 >> log.txt
-	./$(NAME) 5 800 200 200 7 | ../tester_anruland/philotester 5 800 7
+	./$(NAME) $(phil) $(die) $(eat) $(sleep) $(must_eat) | ../tester_anruland/philotester $(phil) $(die) $(must_eat)
 
 clean:
 	rm -f $(OBJS)
