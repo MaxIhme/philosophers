@@ -4,3 +4,4 @@
 *.dSYM/
 philo
 log.txt
+.gitignore
