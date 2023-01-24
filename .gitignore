@@ -1,7 +1,0 @@
-*.o
-.DS_Store
-.vscode/
-*.dSYM/
-philo
-log.txt
-.gitignore
