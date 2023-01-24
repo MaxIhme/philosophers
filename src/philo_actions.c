@@ -6,7 +6,7 @@
 /*   By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:18:34 by mrehberg          #+#    #+#             */
-/*   Updated: 2023/01/24 10:08:59 by mrehberg         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:15:20 by mrehberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	eat_philo(t_philo *philo)
 			{
 				if (philo->info->time_die - (time_from_start() - \
 					philo->last_time_eat) > (philo->info->time_die / 3))
-					usleep(1000);
+					usleep(300);
 			}
 		}
 		if (dead_or_saturated(philo))

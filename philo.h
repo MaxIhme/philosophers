@@ -6,7 +6,7 @@
 /*   By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:12:02 by mrehberg          #+#    #+#             */
-/*   Updated: 2023/01/23 20:41:55 by mrehberg         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:46:44 by mrehberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define STATUS_EAT 14
 # define STATUS_FORK 15
 # define STATUS_DEAD 16
+# define STATUS_TIME 18
 
 # define CLEAN_UP_EVERYTHING 17
 

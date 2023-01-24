@@ -6,7 +6,7 @@
 #    By: mrehberg <maxrehberg@posteo.de>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 18:09:20 by mrehberg          #+#    #+#              #
-#    Updated: 2023/01/24 11:47:13 by mrehberg         ###   ########.fr        #
+#    Updated: 2023/01/24 14:55:35 by mrehberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,12 @@ all: $(NAME)
 $(NAME): Makefile $(SRC)
 	$(CC) $(C_FLAGS) $(SRC) -o $@
 
-phil := 2
-die := 401
+phil := 3
+die := 610
 eat := 200
-sleep := 100
-must_eat := 10
+sleep := 200
+must_eat := 1000
+#3 610 200 200
 
 e: $(NAME)
 	./$(NAME) $(phil) $(die) $(eat) $(sleep) $(must_eat)
